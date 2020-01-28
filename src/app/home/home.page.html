@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment [(ngModel)]="selectedView">
+    <ion-segment-button value="login">
+      <ion-label>LOG IN</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="register">
+      <ion-label>SIGN UP</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="selectedView">
+
+    <!--
+      Inicio de Sesion
+    -->
+    <div *ngSwitchCase="'login'">
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input placeholder="Username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password" placeholder="Password"></ion-input>
+      </ion-item>
+      <ion-item>
+      </ion-item>
+      <ion-button expand="block" (click)="LoginUser()">Log In</ion-button>
+      <ion-button (click)="NavigateTest()"></ion-button>
+      </div>
+
+      <!--
+        Registro
+      -->
+      <div *ngSwitchCase="'register'">
+        <ion-item>
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input placeholder="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Comfirm Password</ion-label>
+          <ion-input type="password" placeholder="Repeat Password"></ion-input>
+        </ion-item>
+        <ion-button expand="block" (click)="RegisterUser()">Register</ion-button>
+      </div>
+  </div>
+</ion-content>

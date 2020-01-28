@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button color="red" text="Log Out" default-href="/"></ion-back-button>
+    </ion-buttons> 
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-item>
+      <img src="../assets/Test.png">
+      <ion-button fill="outline" slot="end" (click)="OpenModal()">View</ion-button>
+    </ion-item>
+    <ion-card-content>
+      <h1>Titulo</h1>
+      This is content, without any paragraph or header tags,
+      within an ion-card-content element.
+    </ion-card-content>
+  </ion-card>
+</ion-content>
