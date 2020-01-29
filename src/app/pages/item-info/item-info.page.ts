@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { movieInterface } from 'src/app/Models/movies.interface';
+import { MovieServiceService } from 'src/app/services/movie-service.service';
+import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-item-info',
@@ -8,7 +11,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ItemInfoPage implements OnInit {
 
-  constructor(private modalCtrl:ModalController) { }
+  constructor(private activroute: ActivatedRoute,private router:Router,private modalCtrl:ModalController,private movieservice:MovieServiceService) { }
 
   ngOnInit() {
   }
@@ -16,6 +19,9 @@ export class ItemInfoPage implements OnInit {
   //Salir Modal
   exitModal(){
     this.modalCtrl.dismiss();
+  }
+  ionViewWillEnter(){
+    let id= this.activroute.snapshot.paramMap.get('id');
   }
 
 }

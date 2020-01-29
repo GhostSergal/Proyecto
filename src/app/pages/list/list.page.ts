@@ -4,6 +4,7 @@ import { ItemInfoPage } from '../item-info/item-info.page';
 import { Observable } from 'rxjs';
 import { movieInterface } from 'src/app/Models/movies.interface';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
+import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-list',
@@ -26,10 +27,7 @@ export class ListPage implements OnInit {
   //abrir modal
   async OpenModal(){
     const modal= await this.modalCtrl.create({
-      component: ItemInfoPage,
-      componentProps:{
-        id: 1
-      }
+      component: ItemInfoPage
     });
     await modal.present();
   }
